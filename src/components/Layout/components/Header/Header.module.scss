@@ -8,5 +8,95 @@
 
 .inner {
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: var(--default-layout-width);
+}
+
+.logo {
+    width: 105px;
+    height: 35px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.nav {
+    flex: 1;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 16px 8px;
+
+    &.active::after {
+        content: '';
+        position: absolute;
+        width: 64%;
+        bottom: 0;
+        left: 17px;
+        right: 0;
+        border-bottom: 3px solid #b5e745;
+    }
+}
+
+.down-icon {
+    color: #b5e745;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.search {
+    width: 230px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #0b0e0f;
+    border: 1px solid;
+    border-color: #263238;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.search-btn {
+    padding: 12px 14px;
+    cursor: pointer;
+}
+
+.search-btn,
+.search-input {
+    color: var(--white);
+    background-color: transparent;
+}
+
+.search-input {
+    width: 100%;
+    font-weight: 500;
+    padding: 12px 0;
+
+    &:focus::-webkit-input-placeholder {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    &:focus::-moz-placeholder {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    &:focus:-ms-input-placeholder {
+        opacity: 1;
+        transition: 0.3s;
+    }
 }
