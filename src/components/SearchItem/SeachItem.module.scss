@@ -1,0 +1,30 @@
+.search-item {
+    padding: 5px 10px 13px;
+    display: flex;
+    color: #888;
+    border-bottom: 1px solid #222e33;
+}
+
+.search-item-img {
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.search-item-body {
+    margin-left: 12px;
+    margin-top: -3px;
+}
+
+.search-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #969696;
+    display: block;
+    cursor: pointer;
+}
+
+.search-episodes {
+    font-size: 1.3rem;
+    color: #888888;
+}

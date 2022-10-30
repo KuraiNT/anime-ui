@@ -57,8 +57,12 @@
     margin-left: 6px;
 }
 
-.search {
+.search,
+.search-result {
     width: 230px;
+}
+
+.search {
     height: 40px;
     display: flex;
     align-items: center;
@@ -67,6 +71,10 @@
     border-color: #263238;
     border-radius: 3px;
     margin-right: 10px;
+}
+
+.search-result {
+    margin-top: -4px;
 }
 
 .search-btn {
@@ -99,4 +107,8 @@
         opacity: 1;
         transition: 0.3s;
     }
+}
+
+.search-list {
+    list-style-type: none;
 }
