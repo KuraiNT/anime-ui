@@ -7,6 +7,7 @@ import Tippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
 import { Wrapper as PoperWrapper } from '~/components/Poper';
 import SearchItem from '~/components/SearchItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -15,7 +16,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
 
@@ -95,7 +96,7 @@ function Header() {
                         </div>
                     </Tippy>
                 </div>
-                <button>Dang nhap</button>
+                <Button primary>Đăng nhập</Button>
             </div>
         </header>
     );

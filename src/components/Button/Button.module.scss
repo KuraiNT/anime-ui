@@ -1,0 +1,41 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    padding: 12.4px 16px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.primary {
+    color: var(--white);
+    transition: 0.3s;
+    background-color: var(--primary);
+
+    &:hover {
+        background-color: #263238;
+    }
+}
+
+// Button size
+.large {
+    min-width: 180px;
+}
