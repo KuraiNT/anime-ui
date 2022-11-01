@@ -1,0 +1,54 @@
+// Subnav css
+.subnav {
+    position: fixed;
+    width: 400px;
+    border-top: 3px solid #b5e745;
+    background-color: var(--white);
+    animation: fadeIn linear 0.2s;
+
+    &::before {
+        content: '';
+        border-width: 4px 5px;
+        position: absolute;
+        border-style: solid;
+        border-color: transparent transparent #b5e745 transparent;
+        left: 15px;
+        top: -11px;
+        animation: fadeIn linear 0.1s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        top: -4px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.subnav-list {
+    padding: 9px 14px 10px 14px;
+    display: flex;
+
+    .subnav-link {
+        color: var(--text-color);
+        font-size: 1.3rem;
+        display: inline-block;
+        margin-left: 0;
+        padding: 6px;
+        font-weight: 400;
+
+        &:hover {
+            color: #7d7d7d;
+        }
+    }
+}
+
+.subnav-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

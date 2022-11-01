@@ -8,7 +8,7 @@
     --text-color: #333;
 
     // Default layout
-    --default-layout-header-height: 66px;
+    --default-layout-header-height: 72px;
     --default-layout-width: 1142px;
 }
 
@@ -36,6 +36,10 @@ input,
 [tabindex] {
     outline: none;
     border: none;
+}
+
+ul {
+    list-style-type: none;
 }
 
 a[href] {
