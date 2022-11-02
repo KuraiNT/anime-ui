@@ -253,6 +253,8 @@ function Header() {
         }, 0);
     }, []);
 
+    const currentUser = false;
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -356,40 +358,42 @@ function Header() {
                         </div>
                     </HeadlessTippy>
                 </div>
-                {/* <Button primary>Đăng nhập</Button> */}
 
-                <div className={cx('action')}>
-                    <div>
-                        <HeadlessTippy
-                            interactive
-                            offset={[0, 10]}
-                            maxWidth={400}
-                            trigger="click"
-                            placement="bottom-end"
-                            arrow={false}
-                            render={(attrs) => (
-                                <div className={cx('notify')} tabIndex="-1" {...attrs}>
-                                    <span>Không có thông báo</span>
-                                </div>
-                            )}
-                        >
-                            <button className={cx('bell')}>
-                                <FontAwesomeIcon icon={faBell} />
-                            </button>
-                        </HeadlessTippy>
-                    </div>
-
-                    <Menu item={MENU_ITEM}>
-                        <div className={cx('user')}>
-                            <img
-                                alt=""
-                                src="https://i.pinimg.com/236x/5d/e3/1e/5de31ea6ee90e3489369edfdab2a50ed.jpg"
-                                className={cx('avatar')}
-                            />
-                            <FontAwesomeIcon icon={faAngleDown} className={cx('down')} />
+                {currentUser ? (
+                    <div className={cx('action')}>
+                        <div>
+                            <HeadlessTippy
+                                interactive
+                                offset={[0, 10]}
+                                maxWidth={400}
+                                trigger="click"
+                                placement="bottom-end"
+                                arrow={false}
+                                render={(attrs) => (
+                                    <div className={cx('notify')} tabIndex="-1" {...attrs}>
+                                        <span>Không có thông báo</span>
+                                    </div>
+                                )}
+                            >
+                                <button className={cx('bell')}>
+                                    <FontAwesomeIcon icon={faBell} />
+                                </button>
+                            </HeadlessTippy>
                         </div>
-                    </Menu>
-                </div>
+                        <Menu item={MENU_ITEM}>
+                            <div className={cx('user')}>
+                                <img
+                                    alt=""
+                                    src="https://i.pinimg.com/236x/5d/e3/1e/5de31ea6ee90e3489369edfdab2a50ed.jpg"
+                                    className={cx('avatar')}
+                                />
+                                <FontAwesomeIcon icon={faAngleDown} className={cx('down')} />
+                            </div>
+                        </Menu>
+                    </div>
+                ) : (
+                    <Button primary>Đăng nhập</Button>
+                )}
             </div>
         </header>
     );
