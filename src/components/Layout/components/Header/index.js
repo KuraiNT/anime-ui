@@ -24,6 +24,7 @@ import SubnavDangAnime from '~/components/Popper/Subnav/SubnavDangAnime';
 import SubnavTopAnime from '~/components/Popper/Subnav/SubnavTopAnime';
 import SubnavLoaiAnime from '~/components/Popper/Subnav/SubnavLoaiAnime';
 import SubnavSeasonAnime from '~/components/Popper/Subnav/SubnavSeasonAnime';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -247,13 +248,13 @@ const SUBNAV_ITEM_SEASON_3 = [
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
+    const currentUser = true;
+
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([]);
         }, 0);
     }, []);
-
-    const currentUser = false;
 
     return (
         <header className={cx('wrapper')}>
@@ -382,10 +383,11 @@ function Header() {
                         </div>
                         <Menu item={MENU_ITEM}>
                             <div className={cx('user')}>
-                                <img
+                                <Image
                                     alt=""
-                                    src="https://i.pinimg.com/236x/5d/e3/1e/5de31ea6ee90e3489369edfdab2a50ed.jpg"
+                                    src="https://i.pinimg.com/564x/28/38/7a/28387a32240ad4257426bbffd350a710.jpg"
                                     className={cx('avatar')}
+                                    fallback="https://i.pinimg.com/736x/54/c3/da/54c3da5a942686b0b5a29971276bfbf9.jpg"
                                 />
                                 <FontAwesomeIcon icon={faAngleDown} className={cx('down')} />
                             </div>
