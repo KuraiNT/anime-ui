@@ -237,7 +237,7 @@ const SUBNAV_ITEM_SEASON_3 = [
 ];
 
 function Header() {
-    const currentUser = true;
+    const currentUser = false;
     const currentNotify = true;
 
     return (

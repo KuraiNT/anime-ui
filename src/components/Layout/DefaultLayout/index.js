@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import Notification from './Notification';
+import Notification from '~/components/Layout/components/Notification';
 
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';

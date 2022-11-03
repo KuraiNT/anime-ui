@@ -1,0 +1,29 @@
+.wrapper {
+    position: relative;
+}
+
+.movie-list {
+    display: flex;
+    margin: 0 -8px;
+    overflow: hidden;
+}
+
+.left-btn {
+    left: -6px;
+}
+
+.left-btn,
+.right-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: var(--white);
+    font-size: 1rem;
+    background-color: #f62f39;
+    padding: 10px 9px;
+    cursor: pointer;
+}
+
+.right-btn {
+    right: -6px;
+}

@@ -1,6 +1,7 @@
 // Layout
 import { HeaderOnly } from '~/components/Layout';
 
+// Page
 import Home from '~/page/Home';
 import Search from '~/page/Search';
 import Upload from '~/page/Upload';
