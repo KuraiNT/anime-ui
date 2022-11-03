@@ -22,6 +22,10 @@
     color: #969696;
     display: block;
     cursor: pointer;
+
+    &:hover {
+        color: var(--white);
+    }
 }
 
 .search-episodes {

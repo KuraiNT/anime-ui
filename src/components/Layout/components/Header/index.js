@@ -1,12 +1,4 @@
-import {
-    faAngleDown,
-    faBell,
-    faChevronDown,
-    faFilm,
-    faMagnifyingGlass,
-    faPowerOff,
-    faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBell, faChevronDown, faFilm, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -14,9 +6,6 @@ import styles from './Header.module.scss';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
-import { useEffect, useState } from 'react';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import SearchItem from '~/components/SearchItem';
 import Button from '~/components/Button';
 import { Link } from 'react-router-dom';
 import Menu from '~/components/Popper/Menu';
@@ -25,6 +14,7 @@ import SubnavTopAnime from '~/components/Popper/Subnav/SubnavTopAnime';
 import SubnavLoaiAnime from '~/components/Popper/Subnav/SubnavLoaiAnime';
 import SubnavSeasonAnime from '~/components/Popper/Subnav/SubnavSeasonAnime';
 import Image from '~/components/Image';
+import Search from '../Search/Search';
 
 const cx = classNames.bind(styles);
 
@@ -246,15 +236,7 @@ const SUBNAV_ITEM_SEASON_3 = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
     const currentUser = true;
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
 
     return (
         <header className={cx('wrapper')}>
@@ -336,29 +318,7 @@ function Header() {
                     </ul>
                 </nav>
 
-                <div>
-                    <HeadlessTippy
-                        interactive
-                        visible={searchResult.length > 0}
-                        render={(attrs) => (
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                <PopperWrapper>
-                                    <ul className={cx('search-list')}>
-                                        <SearchItem />
-                                        <SearchItem />
-                                    </ul>
-                                </PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div className={cx('search')}>
-                            <button className={cx('search-btn')}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                            </button>
-                            <input placeholder="Tìm: tên tiếng nhật, anh, việt" className={cx('search-input')} />
-                        </div>
-                    </HeadlessTippy>
-                </div>
+                <Search />
 
                 {currentUser ? (
                     <div className={cx('action')}>
