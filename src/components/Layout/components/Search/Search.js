@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
         setTimeout(() => {
@@ -23,7 +24,7 @@ function Search() {
         <div>
             <HeadlessTippy
                 interactive
-                visible={searchResult.length > 0}
+                visible={searchValue && searchResult.length > 0}
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
@@ -39,7 +40,11 @@ function Search() {
                     <button className={cx('search-btn')}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
-                    <input placeholder="Tìm: tên tiếng nhật, anh, việt" className={cx('search-input')} />
+                    <input
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        placeholder="Tìm: tên tiếng nhật, anh, việt"
+                        className={cx('search-input')}
+                    />
                 </div>
             </HeadlessTippy>
         </div>

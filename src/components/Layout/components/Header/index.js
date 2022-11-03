@@ -15,6 +15,7 @@ import SubnavLoaiAnime from '~/components/Popper/Subnav/SubnavLoaiAnime';
 import SubnavSeasonAnime from '~/components/Popper/Subnav/SubnavSeasonAnime';
 import Image from '~/components/Image';
 import Search from '../Search/Search';
+import NotifyItem from '~/components/NotifyItem/NotifyItem';
 
 const cx = classNames.bind(styles);
 
@@ -237,6 +238,7 @@ const SUBNAV_ITEM_SEASON_3 = [
 
 function Header() {
     const currentUser = true;
+    const currentNotify = true;
 
     return (
         <header className={cx('wrapper')}>
@@ -325,19 +327,30 @@ function Header() {
                         <div>
                             <HeadlessTippy
                                 interactive
-                                offset={[0, 10]}
+                                offset={[0, 6]}
                                 maxWidth={400}
                                 trigger="click"
                                 placement="bottom-end"
                                 arrow={false}
                                 render={(attrs) => (
                                     <div className={cx('notify')} tabIndex="-1" {...attrs}>
-                                        <span>Không có thông báo</span>
+                                        {currentNotify ? (
+                                            <>
+                                                <div className={cx('notify-list')}>
+                                                    <NotifyItem />
+                                                    <NotifyItem />
+                                                </div>
+                                                <button className={cx('close-all')}>Xóa tất cả</button>
+                                            </>
+                                        ) : (
+                                            <span className={cx('no-notify')}>Không có thông báo</span>
+                                        )}
                                     </div>
                                 )}
                             >
                                 <button className={cx('bell')}>
                                     <FontAwesomeIcon icon={faBell} />
+                                    {currentNotify ? <span className={cx('notify-number')}>1</span> : <span></span>}
                                 </button>
                             </HeadlessTippy>
                         </div>
