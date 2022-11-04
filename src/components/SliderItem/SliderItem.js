@@ -17,11 +17,14 @@ function SliderItem({ data }) {
                     <FontAwesomeIcon icon={faStar} />
                     <span>{data.star}</span>
                 </div>
-                <span className={cx('episode')}>
-                    TẬP
-                    <span>{data.episode}</span>
-                </span>
-                {/* <span className={cx('action')}>FHD</span> */}
+                {data.episode !== null ? (
+                    <span className={cx('episode')}>
+                        TẬP
+                        <span>{data.episode}</span>
+                    </span>
+                ) : (
+                    <span className={cx('action')}>FHD</span>
+                )}
                 <span className={cx('name')}>{data.title}</span>
                 <FontAwesomeIcon className={cx('play-btn')} icon={faPlay} />
             </div>

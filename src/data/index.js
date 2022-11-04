@@ -53,7 +53,7 @@ export const slideList = [
         title: 'Nhà Có Năm Nàng Dâu Movie',
         image: 'http://cdn.animevietsub.cc/data/poster/2022/10/27/animevsub-Kk4DweCgPY.jpg',
         star: 9.7,
-        episode: 'FHD',
+        episode: null,
     },
     {
         id: 9,

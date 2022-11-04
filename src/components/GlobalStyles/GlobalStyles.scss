@@ -52,13 +52,25 @@ a[href] {
     height: var(--default-slide-height);
 }
 
-.owl-nav {
+// .owl-nav {
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+.owl-prev,
+.owl-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    z-index: 10;
+    display: block;
+}
+
+.owl-next {
+    right: 0;
 }
 
 .owl-prev,
@@ -68,7 +80,6 @@ a[href] {
         font-size: 1.4rem;
         background-color: #f62f39;
         padding: 4px 9px;
-        z-index: 10;
         cursor: pointer;
     }
 }
