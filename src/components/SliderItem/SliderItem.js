@@ -1,14 +1,13 @@
 import { faPlay, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames/bind';
 import Image from '../Image';
+
+import classNames from 'classnames/bind';
 import styles from './SliderItem.module.scss';
 
 const cx = classNames.bind(styles);
 
 function SliderItem({ data }) {
-    const currentEpisode = true;
-
     return (
         <div className={cx('slide-item')}>
             <div className={cx('body')}>
@@ -18,11 +17,6 @@ function SliderItem({ data }) {
                     <FontAwesomeIcon icon={faStar} />
                     <span>{data.star}</span>
                 </div>
-                {/* {currentEpisode ? (
-
-                ) : (
-
-                )} */}
                 <span className={cx('episode')}>
                     TẬP
                     <span>{data.episode}</span>
